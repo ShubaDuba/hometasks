@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraySpiralBypassCSh", "ArraySpiralBypassCSh\ArraySpiralBypassCSh.csproj", "{0136E3D6-B423-4D89-B9C7-D54545081950}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiralBypass.Tests", "ArraySpiralBypassCSh.Tests\SpiralBypass.Tests.csproj", "{55317FCB-00A8-4586-B732-97EAF4FB97EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{0136E3D6-B423-4D89-B9C7-D54545081950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0136E3D6-B423-4D89-B9C7-D54545081950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0136E3D6-B423-4D89-B9C7-D54545081950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55317FCB-00A8-4586-B732-97EAF4FB97EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55317FCB-00A8-4586-B732-97EAF4FB97EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55317FCB-00A8-4586-B732-97EAF4FB97EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55317FCB-00A8-4586-B732-97EAF4FB97EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
