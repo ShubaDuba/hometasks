@@ -8,6 +8,10 @@ namespace BubbleSortCSh
 {
     public class Program
     {
+        /// <summary>
+        /// Сортировка одномерного массива пузырьком.
+        /// </summary>
+        /// <param name="tmp">Исходный одномерный массив.</param>
         public static void BubbleSort(int[] tmp)
         {
             for (int i = 0; i < tmp.Length; ++i)
@@ -22,6 +26,10 @@ namespace BubbleSortCSh
                 }
         }
 
+        /// <summary>
+        /// Вывод в консоль одномерного массива.
+        /// </summary>
+        /// <param name="tmp">Одномерный массив.</param>
         public static void PrintArray(int[] tmp)
         {
             for (var i = 0; i < tmp.Length; ++i)
