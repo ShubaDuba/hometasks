@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace ColSortCSh
 {
-    class Program
+    public class Program
     {
-        private static void ArrayPrint(int[,] array, int cols, int rows)
+        /// <summary>
+        /// Вывод матрицы в консоль.
+        /// </summary>
+        /// <param name="array">Исходная матрица.</param>
+        /// <param name="cols">Кол-во столбцов.</param>
+        /// <param name="rows">Кол-во строк.</param>
+        public static void ArrayPrint(int[,] array, int cols, int rows)
         {
             for (int i = 0; i < rows; i++)
             {
@@ -18,7 +24,14 @@ namespace ColSortCSh
             }
         }
 
-        private static void ColSwap(int[,] array, int col1, int col2, int rowNum)
+        /// <summary>
+        /// Перемена двух столбцов матрицы местами.
+        /// </summary>
+        /// <param name="array">Исходная матрица.</param>
+        /// <param name="col1">Номер первого столбца.</param>
+        /// <param name="col2">Номер второго столбца.</param>
+        /// <param name="rowNum">Кол-во строк в матрице.</param>
+        public static void ColSwap(int[,] array, int col1, int col2, int rowNum)
         {
             for (int i = 0; i < rowNum; i++)
             {
@@ -28,7 +41,13 @@ namespace ColSortCSh
             }
         }
 
-        private static void ColSort(int[,] array, int cols, int rows)
+        /// <summary>
+        /// Сортировка матрицы по столбцам.
+        /// </summary>
+        /// <param name="array">Исходная матрица.</param>
+        /// <param name="cols">Кол-во столбцов.</param>
+        /// <param name="rows">Кол-во строк.</param>
+        public static void ColSort(int[,] array, int cols, int rows)
         {
             for (int i = 0; i < cols - 1; i++)
             {

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColSortCSh", "CollSortCSh\ColSortCSh.csproj", "{FEAE07A3-A4DD-4668-B3F8-97F37E7E292D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColSortCSh.Tests", "ColSortCSh.Tests\ColSortCSh.Tests.csproj", "{2B492AAB-54D2-4298-9D81-8AFDBCD7C3D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{FEAE07A3-A4DD-4668-B3F8-97F37E7E292D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEAE07A3-A4DD-4668-B3F8-97F37E7E292D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEAE07A3-A4DD-4668-B3F8-97F37E7E292D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B492AAB-54D2-4298-9D81-8AFDBCD7C3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B492AAB-54D2-4298-9D81-8AFDBCD7C3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B492AAB-54D2-4298-9D81-8AFDBCD7C3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B492AAB-54D2-4298-9D81-8AFDBCD7C3D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
