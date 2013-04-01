@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BubleSortCSh
+namespace BubbleSortCSh
 {
-    class Program
+    public class Program
     {
-        private static void BubbleSort(int[] tmp)
+        public static void BubbleSort(int[] tmp)
         {
             for (int i = 0; i < tmp.Length; ++i)
                 for (int j = tmp.Length - 1; j > i; --j)
@@ -22,29 +22,25 @@ namespace BubleSortCSh
                 }
         }
 
+        public static void PrintArray(int[] tmp)
+        {
+            for (var i = 0; i < tmp.Length; ++i)
+            {
+                Console.Write(tmp[i]);
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите размер массива");
-            var inputString = Console.ReadLine();
-            int arraySize = int.Parse(inputString);
             Console.WriteLine("Элементы массива:");
-            int[] array = new int[arraySize];
-            for (var i = 0; i < array.Length; ++i)
-            {
-                array[i] = -i;
-                Console.Write(array[i]);
-                Console.Write(" ");
-            }
-
-            Console.WriteLine();
+            int[] array = new int[15] {1,2,4,124,124,124,124,14,14,12412,13512,53,23,23,34234};
+            PrintArray(array);
+            Console.WriteLine("Исходный массив:");
             BubbleSort(array);
             Console.WriteLine("Отсортированный массив:");
-            for (var i = 0; i < array.Length; ++i)
-            {
-                Console.Write(array[i]);
-                Console.Write(" ");
-            }
-
+            PrintArray(array);
             Console.WriteLine();
             Console.ReadKey();
         }
