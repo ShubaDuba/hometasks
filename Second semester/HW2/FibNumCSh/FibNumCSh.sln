@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibNumCSh", "FibNumCSh\FibNumCSh.csproj", "{DD41A8C6-684A-4799-A2C9-A97EEA1A751E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibNumCSh.Tests", "FibNumCSh.Tests\FibNumCSh.Tests.csproj", "{8F1D8209-3C15-4CCD-8379-28321398CE96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{DD41A8C6-684A-4799-A2C9-A97EEA1A751E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD41A8C6-684A-4799-A2C9-A97EEA1A751E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD41A8C6-684A-4799-A2C9-A97EEA1A751E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F1D8209-3C15-4CCD-8379-28321398CE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F1D8209-3C15-4CCD-8379-28321398CE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F1D8209-3C15-4CCD-8379-28321398CE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F1D8209-3C15-4CCD-8379-28321398CE96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

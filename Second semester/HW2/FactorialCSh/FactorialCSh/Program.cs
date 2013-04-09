@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace FactorialCSh
 {
-    class Program
+    public class Program
     {
-        private static int Factorial(int n)
+        /// <summary>
+        /// Вычисление факториала.
+        /// </summary>
+        /// <param name="n">Число, факториал которого требуется найти.</param>
+        /// <returns>Факториал данного числа.</returns>
+        public static int Factorial(int n)
         {
             if (n == 1)
             {
