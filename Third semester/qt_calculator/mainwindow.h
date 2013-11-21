@@ -26,6 +26,8 @@ public:
 private slots:
     void pressedDigit(int digit);
     void chooseOp(int tmpOperation);
+    void pressedSignChange();
+    void pressedPoint();
     void pressedEqual();
     void clearAll();
 
@@ -35,10 +37,12 @@ private:
 
     void init();
 
-    Operation savedOperation = EMPTY;
-    int count(int number_1, int number_2, Operation tmp);
-    int savedArgument;
-    bool operationPressed = false;
-    bool argumentInserted = false;
+    Operation savedOperation;
+    double count(double num_1, double num_2, Operation tmp);
+    double savedArgument;
+    bool operationPressed;
+    bool argumentInserted;
+    bool pointPressed;
+    bool equalPressed;
     Ui::MainWindow *ui;
 };

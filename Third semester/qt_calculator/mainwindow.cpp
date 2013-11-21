@@ -1,6 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+const int ZERO = 0;
+const double REVERSE = -1;
+const int MYPREC = 17;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -47,10 +51,33 @@ void MainWindow::chooseOp(int tmpOperation)
         }
 
         operationPressed = true;
-        savedArgument = ui->lineEdit->text().toInt();
+        savedArgument = ui->lineEdit->text().toDouble();
         ui->lineEdit->clear();
         ui->label->clear();
         argumentInserted = false;
+    }
+}
+
+void MainWindow::pressedSignChange()
+{
+    ui->lineEdit->setText(QString::number(REVERSE * ui->lineEdit->text().toDouble(), 'g', MYPREC));
+}
+
+void MainWindow::pressedPoint()
+{
+    if (equalPressed)
+    {
+        clearAll();
+    }
+
+    if (!pointPressed)
+    {
+        if (ui->lineEdit->text() == '\0')
+        {
+            ui->lineEdit->setText("0");
+        }
+        ui->lineEdit->setText(ui->lineEdit->text() + '.');
+        pointPressed = true;
     }
 }
 
@@ -59,25 +86,36 @@ void MainWindow::pressedEqual()
     if (operationPressed && argumentInserted)
     {
         ui->lineEdit->setText(QString::number(count(savedArgument,
-                                                    ui->lineEdit->text().toInt(),
-                                                    savedOperation)));
-        savedArgument = 0;
+                                                    ui->lineEdit->text().toDouble(),
+                                                    savedOperation),
+                                              'g',
+                                              MYPREC));
+        savedArgument = ZERO;
         savedOperation = EMPTY;
         operationPressed = false;
+        pointPressed = false;
+        equalPressed = true;
     }
 }
 
 void MainWindow::clearAll()
 {
     ui->lineEdit->clear();
-    savedArgument = 0;
+    savedArgument = ZERO;
     savedOperation = EMPTY;
     operationPressed = false;
+    pointPressed = false;
+    equalPressed = true;
     ui->label->clear();
 }
 
 void MainWindow::init()
 {
+    savedOperation = EMPTY;
+    operationPressed = false;
+    argumentInserted = false;
+    pointPressed = false;
+    equalPressed = false;
     digitMapper = new QSignalMapper (this);
 
     connect(ui->toolButton_0, SIGNAL(clicked()), digitMapper, SLOT(map()));
@@ -117,35 +155,37 @@ void MainWindow::init()
             this, SLOT(chooseOp(int)));
 
     connect(ui->C, SIGNAL(clicked()), this, SLOT(clearAll()));
-    connect(ui->equal, SIGNAL(clicked()), this ,SLOT(pressedEqual()));
+    connect(ui->equal, SIGNAL(clicked()), this , SLOT(pressedEqual()));
+    connect(ui->signChange, SIGNAL(clicked()), this, SLOT(pressedSignChange()));
+    connect(ui->pointAdd, SIGNAL(clicked()), this, SLOT(pressedPoint()));
 }
 
-int MainWindow::count(int number_1, int number_2, Operation tmp)
+double MainWindow::count(double num_1, double num_2, Operation tmp)
 {
     switch (tmp)
     {
     case EMPTY:
-        return 0;
+        return ZERO;
         break;
     case PLUS:
-        return number_1 + number_2;
+        return num_1 + num_2;
         break;
     case MINUS:
-        return number_1 - number_2;
+        return num_1 - num_2;
         break;
     case MULT:
-        return number_1 * number_2;
+        return num_1 * num_2;
         break;
     case DIV:
-        if (number_2 == 0)
+        if (num_2 == ZERO)
         {
             ui->label->setText("Division by zero.");
-            return 0;
+            return ZERO;
         }
         else{
-            return number_1 / number_2;
+            return num_1 / num_2;
         }
         break;
     }
-    return 0;
+    return ZERO;
 }
