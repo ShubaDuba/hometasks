@@ -1,0 +1,7 @@
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\bin\Debug\ArrayZeroElementsCount.Tests.dll
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\bin\Debug\ArrayZeroElementsCount.Tests.pdb
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\bin\Debug\ArrayZeroElementsCount.exe
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\bin\Debug\ArrayZeroElementsCount.pdb
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\obj\Debug\ArrayZeroElementsCount.Tests.csprojResolveAssemblyReference.cache
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\obj\Debug\ArrayZeroElementsCount.Tests.dll
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount.Tests\obj\Debug\ArrayZeroElementsCount.Tests.pdb

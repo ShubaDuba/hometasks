@@ -1,0 +1,6 @@
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\bin\Debug\ArrayZeroElementsCount.exe.config
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\bin\Debug\ArrayZeroElementsCount.exe
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\bin\Debug\ArrayZeroElementsCount.pdb
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\obj\Debug\ArrayZeroElementsCount.csprojResolveAssemblyReference.cache
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\obj\Debug\ArrayZeroElementsCount.exe
+C:\documentsss\Visual Studio 2012\Projects\ArrayZeroElementsCount\ArrayZeroElementsCount\obj\Debug\ArrayZeroElementsCount.pdb
