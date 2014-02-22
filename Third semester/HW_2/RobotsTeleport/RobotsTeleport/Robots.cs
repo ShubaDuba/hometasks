@@ -78,12 +78,7 @@ namespace RobotsTeleport
                 }
             }
 
-            if ((tmp1 == 1) || (tmp2 == 1))
-            {
-                return false;
-            }
-
-            return true;
+            return !((tmp1 == 1) || (tmp2 == 1));            
         }
 
         /// <summary>
@@ -102,7 +97,6 @@ namespace RobotsTeleport
                     {
                         if ((GraphMatrix[i,j]) && (!ConnecteсtionComponents[j]))
                         {
-                            ConnecteсtionComponents[j] = true;
                             InitializeConnectionComponents(j);
                         }
                     }

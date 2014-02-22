@@ -30,27 +30,27 @@ namespace LocalNetwork
         /// <summary>
         /// Matrix describing the connection between computers
         /// </summary>
-        public bool[,] AdjacencyMatrix { get; set; }
+        private bool[,] AdjacencyMatrix;
         
         /// <summary>
         /// Matrix describing the operating system of each computer
         /// </summary>
-        public int[] OperatingSystems { get; set; }
+        private int[] OperatingSystems;
         
         /// <summary>
         /// Matrix that shows the status of each computer(True = not infected, False = infected)
         /// </summary>
-        public bool[] InfectionMap { get; set; }
+        private bool[] InfectionMap;
 
         /// <summary>
         /// Matrix that shows probability of infection for each OS
         /// </summary>
-        public int[] InfectionProbability { get; set; }
+        private int[] InfectionProbability;
 
         /// <summary>
         /// The number of infected machines
         /// </summary>
-        public int NumberOfInfectedMachines { get; set; }
+        protected int NumberOfInfectedMachines;
         
         /// <summary>
         /// Method for printing of system status
@@ -104,7 +104,7 @@ namespace LocalNetwork
         /// <summary>
         /// Method which counts the number of infected machines
         /// </summary>
-        public void NumberOfInfectedMachineCount()
+        private void NumberOfInfectedMachineCount()
         {
             this.NumberOfInfectedMachines = 0;
             for (int i = 0; i < InfectionMap.Length; ++i)
@@ -122,12 +122,7 @@ namespace LocalNetwork
         /// <returns>True if all computers are infected</returns>
         public bool FullInfected()
         {
-            if (NumberOfInfectedMachines == InfectionMap.Length)
-            {
-                return true;
-            }
-
-            return false;
+            return NumberOfInfectedMachines == InfectionMap.Length;
         }
     }
 }

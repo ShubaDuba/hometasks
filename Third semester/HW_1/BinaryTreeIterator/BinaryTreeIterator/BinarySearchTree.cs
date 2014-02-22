@@ -12,7 +12,7 @@ namespace BinaryTreeIterator
         /// <summary>
         /// Node of the tree
         /// </summary>
-        public class Node
+        private class Node
         {
             /// <summary>
             /// Node data
@@ -28,27 +28,40 @@ namespace BinaryTreeIterator
             /// Right branch
             /// </summary>
             public Node Right { get; set; }
+
+            /// <summary>
+            /// Constructor.
+            /// </summary>
+            /// <param name="value">Value</param>
+            /// <param name="left">Left branch</param>
+            /// <param name="right">Right branch</param>
+            public Node(int value, Node left, Node right)
+            {
+                this.Value = value;
+                this.Left = left;
+                this.Right = right;
+            }
         }
 
         /// <summary>
         /// Root of the tree
         /// </summary>
-        public Node Root { get; set; }
+        private Node Root { get; set; }
 
         /// <summary>
         /// Method for finding specific value in the tree
         /// </summary>
         /// <param name="value"></param>
         /// <returns> Node with specified value or null if value is not in the tree</returns>
-        public Node Find(int value)
+        public bool Find(int value)
         {
             Node tmp = this.Root;
 
-            while ((tmp != null) || (tmp.Value != value))
+            while (tmp != null)
             {
                 if (tmp.Value == value)
                 {
-                    return tmp;
+                    return true;
                 }
 
                 if (tmp.Value > value)
@@ -61,7 +74,7 @@ namespace BinaryTreeIterator
                 }
             }
 
-            return null;
+            return false;
         }
 
         /// <summary>
@@ -70,10 +83,7 @@ namespace BinaryTreeIterator
         /// <param name="newValue">Value</param>
         public void Insert(int newValue)
         {
-            Node tmp = new Node();
-            tmp.Value = newValue;
-            tmp.Left = null;
-            tmp.Right = null;
+            Node tmp = new Node(newValue, null, null);
 
             if (this.Root == null)
             {
@@ -98,52 +108,6 @@ namespace BinaryTreeIterator
             else
                 flag.Right = tmp;
         }
-
-/*      /// <summary>
-        /// Method for removing node with specified value
-        /// </summary>
-        /// <param name="value">Value</param>
-        public void Remove(int value)
-        {
-            Node tmp1 = this.Find(value);
-            if (tmp1 != null)
-            {
-                if (tmp1.Left == null && tmp1.Right == null)
-                {
-                    tmp1 = null;
-                }
-                else if (tmp1.Right == null)
-                {
-                    tmp1 = tmp1.Left;
-                }
-                else if (tmp1.Left == null)
-                {
-                    tmp1 = tmp1.Right;
-                }
-                else
-                {
-                    Node flag = tmp1.Right;
-
-                    if (flag.Left == null)
-                    {
-                        Node tmp2 = tmp1;
-                        tmp1 = flag;
-                        tmp1.Left = tmp2.Left;
-                    }
-                    else
-                    {
-                        while (flag.Left != null)
-                        {
-                            flag = flag.Left;
-                        }
-
-                        int tmp = flag.Value;
-                        flag = flag.Right;
-                        tmp1.Value = tmp;
-                    }
-                }
-            }
-        }*/
 
         /// <summary>
         /// Method which returns new Iterator
@@ -175,7 +139,7 @@ namespace BinaryTreeIterator
             /// <param name="tree">Concrete Tree</param>
             public Iterator(BinarySearchTree tree)
             {
-                MakeList(tree);
+                MakeList(tree.Root);
             }
 
             /// <summary>
@@ -186,27 +150,22 @@ namespace BinaryTreeIterator
             /// <summary>
             /// List of nodes
             /// </summary>
-            private List<Node> list = new List<Node>();
+            private List<int> list = new List<int>();
 
             /// <summary>
             /// Method which builds a list from tree
             /// </summary>
-            /// <param name="tree">Selected tree</param>
-            private void MakeList(BinarySearchTree tree)
+            /// <param name="root">Root of selected subtree</param>
+            private void MakeList(Node root)
             {
-                if ((tree.Root.Left == null) && (tree.Root.Right == null))
+                if ((root.Left == null) && (root.Right == null))
                 {
-                    list.Add(tree.Root);
+                    list.Add(root.Value);
                     return;
                 }
 
-                BinarySearchTree tmpTree1 = new BinarySearchTree();
-                tmpTree1.Root = tree.Root.Left;
-                MakeList(tmpTree1);
-                this.list.Add(tree.Root);
-                BinarySearchTree tempTree2 = new BinarySearchTree();
-                tempTree2.Root = tree.Root.Left;
-                MakeList(tempTree2);
+                MakeList(root.Left);
+                MakeList(root.Right);
             }
 
             /// <summary>
@@ -241,7 +200,7 @@ namespace BinaryTreeIterator
             /// <summary>
             /// Returns current element
             /// </summary>
-            public Node Current
+            public int Current
             {
                 get
                 {

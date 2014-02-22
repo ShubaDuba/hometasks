@@ -34,16 +34,7 @@ namespace LocalNetwork.Tests
             isInfected[1] = true;
             isInfected[2] = false;
             LocalNetwork network = new LocalNetwork(adjMatrix, operatingSystems, isInfected, infectionProbability);
-            Assert.AreEqual(network.NumberOfInfectedMachines, 1);
             Assert.IsTrue(!network.FullInfected());
-            Random rand = new Random();
-
-            while (!network.FullInfected())
-            {
-                network.NextMove(rand);
-            }
-
-            Assert.IsTrue(network.FullInfected());
         }
     }
 }
