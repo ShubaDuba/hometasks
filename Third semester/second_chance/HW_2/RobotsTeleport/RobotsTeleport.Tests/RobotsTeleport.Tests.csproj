@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B35E6248-5167-48A0-B133-5F16402C12F5}</ProjectGuid>
+    <ProjectGuid>{20F7543C-95CD-4F0C-9E95-B8FB49C435A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BinaryTreeWithIterator.Tests</RootNamespace>
-    <AssemblyName>BinaryTreeWithIterator.Tests</AssemblyName>
+    <RootNamespace>RobotsTeleport.Tests</RootNamespace>
+    <AssemblyName>RobotsTeleport.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,13 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BinaryIteratorTests.cs" />
+    <Compile Include="RobotsTeleportTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BinaryTreeWithIterator\BinaryTreeWithIterator.csproj">
-      <Project>{0d402f95-d543-40b7-a74a-f43d08df7721}</Project>
-      <Name>BinaryTreeWithIterator</Name>
+    <ProjectReference Include="..\RobotsTeleport\RobotsTeleport.csproj">
+      <Project>{ae78a716-2c9d-4ea5-afd6-f502eaaf9fcb}</Project>
+      <Name>RobotsTeleport</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

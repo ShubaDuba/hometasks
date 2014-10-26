@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BinaryTreeWithIterator")]
+[assembly: AssemblyTitle("RobotsTeleport.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BinaryTreeWithIterator")]
+[assembly: AssemblyProduct("RobotsTeleport.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("49b41b91-f434-40df-a446-99448486f478")]
+[assembly: Guid("4bf1b053-93b1-4d66-b76e-1d62c76a44b6")]
 
 // Version information for an assembly consists of the following four values:
 //
