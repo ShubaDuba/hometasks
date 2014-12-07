@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace BinaryTreeIterator
 {
-    public class BinarySearchTree : IEnumerable
+    public class BinarySearchTree<T> : IEnumerable where T : IComparable<T>, new()
     {
         /// <summary>
         /// Node of the tree
@@ -17,7 +17,7 @@ namespace BinaryTreeIterator
             /// <summary>
             /// Node data
             /// </summary>
-            public int Value_ { get; set; }
+            public T Value_ { get; set; }
             
             /// <summary>
             /// Left branch
@@ -49,18 +49,18 @@ namespace BinaryTreeIterator
         /// </summary>
         /// <param name="value">Value to find</param>
         /// <returns> Node with specified value or null if value is not in the tree</returns>
-        public Node Find(int value)
+        public Node Find(T value)
         {
             Node tmp = this.Root_;
 
-            while ((tmp != null) || (tmp.Value_ != value))
+            while ((tmp != null) || (tmp.Value_.CompareTo(value) != 0))
             {
-                if (tmp.Value_ == value)
+                if (tmp.Value_.CompareTo(value) == 0)
                 {
                     return tmp;
                 }
 
-                if (tmp.Value_ > value)
+                if (tmp.Value_.CompareTo(value) > 0)
                 {
                     tmp = tmp.Left_;
                 }
@@ -77,7 +77,7 @@ namespace BinaryTreeIterator
         /// Method for adding value to the tree
         /// </summary>
         /// <param name="value">Value to add</param>
-        public void Insert(int value)
+        public void Insert(T value)
         {
             Node tmp = new Node();
             tmp.Value_ = value;
@@ -94,15 +94,15 @@ namespace BinaryTreeIterator
             
             while ((flag.Left_ != null) || (flag.Right_ != null))
             {
-                if ((value < flag.Value_) && (flag.Left_ != null))
+                if ((value.CompareTo(flag.Value_) < 0) && (flag.Left_ != null))
                     flag = flag.Left_;
-                if ((value >= flag.Value_) && (flag.Right_ != null))
+                if ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ != null))
                     flag = flag.Right_;
-                if (((value < flag.Value_) && (flag.Left_ == null)) || ((value >= flag.Value_) && (flag.Right_ == null)))
+                if (((value.CompareTo(flag.Value_) < 0) && (flag.Left_ == null)) || ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ == null)))
                     break;
             }
             
-            if (value < flag.Value_)
+            if (value.CompareTo(flag.Value_) < 0)
                 flag.Left_ = tmp;
             else
                 flag.Right_ = tmp;
@@ -114,19 +114,19 @@ namespace BinaryTreeIterator
         /// <returns>GetEnumerator()</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return new Iterator(this);
+            return new Iterator<T>(this);
         }
 
         /// <summary>
         /// Iterator class
         /// </summary>
-        class Iterator : IEnumerator
+        class Iterator<Q> : IEnumerator where Q : IComparable<Q>, new()
         {
             /// <summary>
             /// Constructor which makes a list of nodes
             /// </summary>
             /// <param name="tree">Concrete Tree</param>
-            public Iterator(BinarySearchTree tree)
+            public Iterator(BinarySearchTree<Q> tree) 
             {
                 MakeList(tree);
             }
@@ -139,24 +139,24 @@ namespace BinaryTreeIterator
             /// <summary>
             /// List of ints
             /// </summary>
-            private List<int> list = new List<int>();
+            private List<Q> list = new List<Q>();
 
             /// <summary>
             /// Method which builds a list from tree
             /// </summary>
             /// <param name="tree">Selected tree</param>
-            private void MakeList(BinarySearchTree tree)
+            private void MakeList(BinarySearchTree<Q> tree)
             {
                 if (tree.Root_ == null)
                 {
                     return;
                 }
 
-                BinarySearchTree tmpTree1 = new BinarySearchTree();
+                BinarySearchTree<Q> tmpTree1 = new BinarySearchTree<Q>();
                 tmpTree1.Root_ = tree.Root_.Left_;
                 MakeList(tmpTree1);
-                this.list.Add(tree.Root_.Value_);
-                BinarySearchTree tempTree2 = new BinarySearchTree();
+                list.Add(tree.Root_.Value_);
+                BinarySearchTree<Q> tempTree2 = new BinarySearchTree<Q>();
                 tempTree2.Root_ = tree.Root_.Right_;
                 MakeList(tempTree2);
             }

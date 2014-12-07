@@ -10,7 +10,7 @@ namespace BinaryTreeIterator
     {
         static void Main(string[] args)
         {
-            BinarySearchTree tree = new BinarySearchTree();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
             tree.Insert(5);
             tree.Insert(10);
             tree.Insert(30);

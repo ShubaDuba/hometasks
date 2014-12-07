@@ -6,11 +6,11 @@ namespace BinaryTreeIterator.Tests
     [TestClass]
     public class BinaryTreeIteratorTests
     {
-        private BinarySearchTree tree;
+        private BinarySearchTree<int> tree;
         [TestInitialize]
         public void Initialize()
         {
-            tree = new BinarySearchTree();
+            tree = new BinarySearchTree<int>();
             tree.Insert(5);
             tree.Insert(30);
             tree.Insert(10);
