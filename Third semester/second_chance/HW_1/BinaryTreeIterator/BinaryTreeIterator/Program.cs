@@ -18,7 +18,7 @@ namespace BinaryTreeIterator
             {
                 Console.Write(value + " ");
             }
-            Console.Write(tree.Root().Right_.Value_);
+            Console.Write(tree.Root_.Right_.Value_);
             Console.ReadKey();
         }
     }

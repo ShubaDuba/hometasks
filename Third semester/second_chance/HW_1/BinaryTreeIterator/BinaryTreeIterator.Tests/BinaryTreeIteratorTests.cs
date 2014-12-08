@@ -19,10 +19,10 @@ namespace BinaryTreeIterator.Tests
         [TestMethod]
         public void InsertTest()
         {
-            Assert.AreEqual(tree.Root().Value_, 5);
-            Assert.AreEqual(tree.Root().Left_, null);
-            Assert.AreEqual(tree.Root().Right_.Value_, 30);
-            Assert.AreEqual(tree.Root().Right_.Left_.Value_, 10);
+            Assert.AreEqual(tree.Root_.Value_, 5);
+            Assert.AreEqual(tree.Root_.Left_, null);
+            Assert.AreEqual(tree.Root_.Right_.Value_, 30);
+            Assert.AreEqual(tree.Root_.Right_.Left_.Value_, 10);
         }
 
         [TestMethod]

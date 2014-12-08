@@ -33,16 +33,7 @@ namespace BinaryTreeIterator
         /// <summary>
         /// Root of the tree
         /// </summary>
-        private Node Root_ { get; set; }
-
-        /// <summary>
-        /// Public method to get the root of the tree
-        /// </summary>
-        /// <returns>Tree root</returns>
-        public Node Root()
-        {
-            return Root_;
-        }
+        public Node Root_ { get; private set; }
 
         /// <summary>
         /// Method for finding specific value in the tree
@@ -96,9 +87,9 @@ namespace BinaryTreeIterator
             {
                 if ((value.CompareTo(flag.Value_) < 0) && (flag.Left_ != null))
                     flag = flag.Left_;
-                if ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ != null))
+                else if ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ != null))
                     flag = flag.Right_;
-                if (((value.CompareTo(flag.Value_) < 0) && (flag.Left_ == null)) || ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ == null)))
+                else if (((value.CompareTo(flag.Value_) < 0) && (flag.Left_ == null)) || ((value.CompareTo(flag.Value_) >= 0) && (flag.Right_ == null)))
                     break;
             }
             
@@ -134,7 +125,7 @@ namespace BinaryTreeIterator
             /// <summary>
             /// Position of Iterator
             /// </summary>
-            int position = -1;
+            private int position = -1;
 
             /// <summary>
             /// List of ints
@@ -168,7 +159,7 @@ namespace BinaryTreeIterator
             public bool MoveNext()
             {
                 position++;
-                return (position < list.Count);
+                return position < list.Count;
             }
 
             /// <summary>
